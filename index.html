@@ -3,14 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <title>JS Dropdown Date</title>
-<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.js"></script>
-<script type="text/javascript" src="./jquery.jsdropdate.js"></script>
-
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="./date.format.js"></script>
+<script type="text/javascript" src="./jquery-dropdate.js"></script>
+<script>
+$(document).ready(function(){
+    $('.dropdate').dropdate({
+        dateFormat:'mm/dd/yyyy'
+    });
+});
+$(document).on('click', '.show', function(e){
+    alert('Result: ' + $('.dropdate').val());
+});
+</script>
 </head>
 <body>
-	<form>
-		<input type="text" name="birthday" value="" class="jsdropdate">
-	</form>
+	<div>
+		<input type="text" name="birthday" value="" class="dropdate">
+        <button type="button" class="show">Show</button>
+	</div>
 	<script></script>
 </body>
 </html>
